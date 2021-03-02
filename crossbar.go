@@ -30,22 +30,22 @@ func (self *Crossbar) Send(sender, receiver, value int) {
 
 type Node struct {
 	crossbar *Crossbar
-	procNum  int
+	ProcNum  int
 }
 
 func (self *Crossbar) Node(id int) Node {
 	var node Node
 	node.crossbar = self
-	node.procNum = id
+	node.ProcNum = id
 	return node
 }
 
 func (self *Node) Send(receiver, value int) {
-	self.crossbar.Send(self.procNum, receiver, value)
+	self.crossbar.Send(self.ProcNum, receiver, value)
 }
 
 func (self *Node) Receive(sender int) int {
-	return self.crossbar.Receive(self.procNum, sender)
+	return self.crossbar.Receive(self.ProcNum, sender)
 }
 
 func (self *Node) Synchronize() {
