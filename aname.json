@@ -1,0 +1,5 @@
+{
+	"name": "crossbar",
+	"type": "go-repository",
+	"use-case": "academic",
+}
